@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//在JS中，函数也是对象
+
+		//包装对象	
+		//当存储或者读取基本数据类型值得属性是，可以将基本数据类型临时包装成对象
+		//基本数据类型的属性不能被改变、添加或删除
+
+		var str = "abcde";
+		console.log(str.length);
+		//5 临时包装成了String对象
+
+		str.length = 1;
+		console.log(str.length,str);
+		//5 	"abcde" 临时包装对象并不影响原始值
+	</script>
+</head>
+<body>
+
+</body>
+</html>

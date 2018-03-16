@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		var str = "abc_def_ghi_jkl_mn";
+		console.log(str.split("_"));
+		//["abc","def","ghi","jkl","mn"]
+		//split	分割，字符串会对应存为数组进行操作
+
+		console.log(str.split("_",2));
+		//["abc","def"]
+		//length:2
+
+		console.log(str.concat("_opq"));
+		//abc_def_ghi_jkl_mn_opq
+		//concat 拼接
+
+		console.log(str.substr(4,7));
+		//def_ghi
+		//substr 	后边的数组代表长度
+
+		console.log(str.substring(4,7));
+		//def
+
+		console.log(str.slice(2));
+		//c_def_ghi_jkl_mn
+		//切片
+
+		console.log(str.slice(2,5));
+		//c_d
+
+		console.log(str.slice(-2));
+		//mn
+
+		console.log(str.slice(2,-2));
+		//c_def_ghi_jkl_
+	</script>
+</head>
+<body>
+
+</body>
+</html>

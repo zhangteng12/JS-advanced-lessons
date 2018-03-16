@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//number原型方法
+
+		//Number.prototype.toFixed(x)	
+		//保留x位有效数字
+
+		//Number.prototype.toString()	
+		//将一个数值转换为字符串形式
+
+		//Number.prototype.toPrecision()	
+		//将一个数转换为位数的有效数字
+		console.log((12.34).toPrecision(1)) // "1e+1" 
+		console.log((12.34).toPrecision(2)) // "12" 
+		console.log((12.34).toPrecision(3)) // "12.3" 
+		console.log((12.34).toPrecision(4)) // "12.34" 
+		console.log((12.34).toPrecision(5)) // "12.340"
+
+		//Number.prototype.toExponential()	将一个数转为科学计数法形式
+		console.log((10).toExponential()) // "1e+1"
+		console.log((10).toExponential(1)) // "1.0e+1" 
+		console.log((10).toExponential(2)) // "1.00e+1" 
+		console.log((1234).toExponential()) // "1.234e+3" 
+		console.log((1234).toExponential(1)) // "1.2e+3" 
+		console.log((1234).toExponential(2)) // "1.23e+3"
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

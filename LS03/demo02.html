@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//string原型方法
+
+		//String.prototype.charAt(pos); 方法返回指定位置的字符，参数是从0开始编号的位置。
+		var str9 = "abcdef".charAt(2);
+		console.log(str9);
+		//答案：c
+
+		//String.prototype.charCodeAt(pos); 
+		//方法返回给定位置字符的Unicode码点（十进制表示）
+		console.log('abc'.charCodeAt(1));
+		// 98
+		//abc的1号位置的字符是b，它的Unicode码点是98
+
+		String.prototype.slice(start,end?);
+		String.prototype.substr(start,length?)
+		String.prototype.substring(start,end?);
+		String.prototype.split(separator?,limit?);
+		// 方法按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组
+
+		var str6 = "abcdef".split("c");
+		var str7 = "abcdef".split("c",1);
+		var str8 = "abcdef".split("c",2);
+		console.log(str6);
+		console.log(str7);
+		console.log(str8);
+		//["ab", "def"]
+		//["ab"]
+		//["ab", "def"]
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
