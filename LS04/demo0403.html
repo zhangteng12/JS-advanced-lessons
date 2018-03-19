@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">  
+		//ES5中没有块作用域
+		{
+		    var a = 20;
+		}
+		console.log("大括号外依然能访问到a:",a);
+
+		if(true){
+			var a=20;
+		}
+		console.log(a);//20
+
+		if(false){
+			var b=30;
+		}
+		console.log(b);//undefined
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

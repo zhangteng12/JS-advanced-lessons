@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+	
+		//严格模式下全局变量需要显式声明
+
+		function  sloppyFunc() {
+		    sloppyVar = 123;
+		}
+		sloppyFunc();
+		console.log(sloppyVar);
+
+
+		//下边若使用严格模式则会报错
+		function  sloppyFunc() {
+		    'use strict'
+		    sloppyVar = 123;
+		}
+		sloppyFunc();
+		console.log(sloppyVar);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
