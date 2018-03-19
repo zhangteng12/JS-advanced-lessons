@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//严格模式下禁止删除不可改变的属性和未定义的属性
+		var str = "abc";
+
+		function  sloppyFunc() {
+		    str.length = 7;
+		    console.log(str.length);
+		}
+		sloppyFunc();//3
+
+		function  strictFunc() {
+		    'use strict';
+		    str.length = 7;
+		    console.log(str.length);
+		}
+		strictFunc();//报错
+
+		//严格模式下禁止函数参数重名
+		function f(a, a, b) {
+		    return a+b;
+		}
+		f(2,3,4);//非严格模式下正常执行 7
+
+		"use strict";
+		function f(a, a, b) {
+		    return a+b;
+		}
+		f(2,3,4);//严格模式下报错
+
+		//保留字arguments(是类数组对象)如果传的实参比形参的数量多，使用arguments可以得到隐藏的实参
+	</script>
+</head>
+<body>
+
+</body>
+</html>
