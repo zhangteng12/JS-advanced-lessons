@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//实参与形参数目不同
+
+		//实参大于形参
+		//多余的参数存在arguments里，arguments是类数组对象
+		console.log(Array.prototype.slice.call(arguments));
+		//让arguments运用slice这一切分方法变成数组
+		//arguments是类数组对象，里面隐藏了多余的实参
+
+		//实参小于形参时
+		//可以使用逻辑或
+		var sum = function(a,b,c){
+		    b = b||4;
+		    c = c||5;
+		    return a+b+c;
+		};
+		console.log(sum(1,2,3));
+		console.log(sum(1,2));
+		console.log(sum(1));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
