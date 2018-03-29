@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//ES5中没有块作用域，但是有函数作用域
+		if(true){
+	    var i = 0;
+		}
+
+		function foo(){
+		    console.log("j:",j);//undefined
+		    var j = 10;
+		    console.log("j:",j);//10
+		}
+		foo();
+
+		console.log("i:",i);//0
+		console.log("j:",j);//报错
+
+
+		//上边代码在解析器眼里相当于如下
+		var i;
+		if(true){
+		    i = 0;
+		}
+
+		function foo(){
+		    var j;
+		    console.log("j:",j);//undefined
+		    j = 10;
+		    console.log("j:",j);//10
+		}
+		foo();
+
+		console.log("i:",i);//0
+		console.log("j:",j);//报错
+	</script>
+</head>
+<body>
+
+</body>
+</html>
