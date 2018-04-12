@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//变量的污染（对应demo07-1和demo07-2）
+
+		//(function () {  // IIFE开始
+		    var x = 10;
+		    document.onclick = function () {
+		        // console.log("x = ",x);
+		        alert("x = "+x);
+		    };
+		//})();           // IIFE结束
+
+		(function () {  // IIFE开始
+		   var x = 20;
+		})();           // IIFE结束
+
+		/*
+		//由于ES5没有块作用域，即使写成如下形式依然有问题
+		if(true){
+		    var x = 30;
+		}
+		*/
+	</script>
+</head>
+<body>
+
+</body>
+</html>

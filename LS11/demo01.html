@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//立即执行表达式的常见形式
+
+		(function max( x,y){
+		    return x>y?x:y;
+		}(2,3));
+
+		(function max( x,y){
+		    return x>y?x:y;
+		})(2,3);
+
+		//IIFE是表达式，要注意用分号结尾，否则会出现错误
+
+		//与运算符结合的手法
+		var i = function(){
+		    return 10;
+		}(); //i为10
+
+		true && function(a,b){
+		    return a>b?a:b;
+		}(5,9);//9
+
+		0 && function(a,b){
+		    return a>b?a:b;
+		}(5,9);//0
+
+		!function(x,y){
+		    return x==y?true:false; 
+		}("5",5);//false
+	</script>
+</head>
+<body>
+
+</body>
+</html>

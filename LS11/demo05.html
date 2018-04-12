@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+
+		//变量共享问题
+		for (var i = 0; i < 5; i++) {
+		    setTimeout(function() {
+		        console.log(new Date, i);
+		    }, 1000*i);
+		}
+		console.log("i：",i);
+		//var在预解析的时候冲出for语句，for循环一下子执行完毕
+
+		
+		//通过IIFE解决变量共享问题
+		for (var i = 0; i < 5; i++) {
+		    (function(j) {  // j = i
+		        setTimeout(function() {
+		            console.log(new Date, j);
+		        }, 1000*i);
+		    })(i);
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>	
