@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		var obj = {};
+		obj.x = 2;//直接添加属性
+		console.log(obj.x);//通过.访问属性
+		obj.x = 5;//设置属性
+		console.log(obj["x"]);//通过[]访问属性
+		delete obj.x;//删除属性
+		console.log(obj.x);
+
+		var obj1={
+			x1:12,
+			x2:13,
+			x3:14
+		}
+		//访问方式
+		obj1.x1;
+		obj1["x1"];
+		//涉及到用规律访问时只能用[]来访问，用.不能实现
+
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
