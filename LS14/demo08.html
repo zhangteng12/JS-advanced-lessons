@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//给多个属性设置特性的方法（Object.defineProperties)
+		var obj = {_x:1};
+		Object.defineProperties(obj,{
+		    y:{value:2,writable:true,configurable:true,enumerable:true},
+		    z:{value:2,writable:true,configurable:true,enumerable:true},
+		    x:{
+		        get:function(){return this._x;},
+		        set:function (val) {
+		            this._x = val;
+		        }
+		    }
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

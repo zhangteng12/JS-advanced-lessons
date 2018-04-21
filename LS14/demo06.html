@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		var person = {_name:"Jack"};
+		Object.defineProperty(person,"name",{
+		    configurable:false,//若为true会如何
+		    enumerable:true,
+		    set:function(val){this._name = val},
+		    get:function(){return this._name}
+		});
+		console.log(person.name);//输出JAck
+		person.name = "Lucy";
+		console.log(person.name);//输出Lucy
+		delete person.name;//delete person.name;
+		console.log(person.name);//输出Lucy
+	</script>
+</head>
+<body>
+
+</body>
+</html>

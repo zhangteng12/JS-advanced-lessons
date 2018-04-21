@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+	//Object静态方法和Object.prototype原型方法的区别
+		var o3 = {};
+		o3.y = "yyy";
+		Object.defineProperty(o3,"x",
+		    {configurable:true,enumerable:false,writable:true,value:"xxx"}
+		);
+		console.log(Object.keys(o3));
+		//只包含可枚举属性的键
+		//输出["y"]
+
+		console.log(Object.getOwnPropertyNames(o3));
+		//也包含不可枚举属性的键
+		//输出["y","x"]
+
+		console.log(o3.hasOwnProperty("x"));
+		//输出true
+
+		console.log(o3.propertyIsEnumerable("x"));
+		//输出false
+
+		for(var k in o3){ //遍历不到x属性
+		    console.log(k,o3[k]);
+		}
+		//输出y yyy
+
+		console.log("x" in o3,"y" in o3);
+		// in 和 for...in 的区别 关于可枚举属性特性
+		//输出true true
+
+		console.log(o3.hasOwnProperty("x"),o3.hasOwnProperty("y"));
+		//是否关心可枚举
+		//输出true true
+	</script>
+</head>
+<body>
+
+</body>
+</html>
