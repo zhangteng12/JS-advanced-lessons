@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//一般函数中的this在非严格模式下指代全局对象
+		function thisTest(){
+		    console.log(this === window);
+		}
+		thisTest();
+		//true
+
+		//通过this在函数内添加、删除、修改全局对象属性
+		var a=10,b="Hi";
+		function thisTest(){
+			this.a=20;
+			delete this.b;
+			this.c="新添加的全局变量";
+		}
+		thisTest();
+		console.log(a,c);
+		//输出 20 "新添加的全局变量"
+	</script>
+</head>
+<body>
+
+</body>
+</html>

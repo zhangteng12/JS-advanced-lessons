@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//一般函数中的this在严格模式下为undefined
+		function thisTest() {
+		    "use strict"
+		    console.log(this);
+		}
+		thisTest();
+		//undefined
+
+		//严格模式检测
+		//"use strict"
+		function isStrictMode() {
+		    return this == undefined?true:false;
+		}
+		isStrictMode();
+	</script>
+</head>
+<body>
+
+</body>
+</html>
