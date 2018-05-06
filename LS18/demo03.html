@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//稀疏数组
+		var a1 = [,"abc"];
+		console.log(a1.length);
+		//2
+		for(var i in a1){
+		    console.log(i,a1[i]);//输出1 abc
+		}
+		console.log(0 in a1,1 in a1);
+		//输出false true
+		var a2 = new Array(3);
+		console.log(a2.length);
+		//输出3
+		console.log(a2);
+		//输出[empty*3]
+
+		var a3 = [,,];
+		console.log(a3.length);//输出2
+		console.log(["a","b"].length);//输出2
+		console.log(["a","b",].length);//输出2
+		console.log(["a","b",,].length);//输出3
+		//最后的逗号的之后是不算的
+	</script>
+</head>
+<body>
+
+</body>
+</html>

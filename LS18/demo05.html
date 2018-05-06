@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//Part1  数组的静态方法
+		const bar = ["a", "b", "c"];
+		Array.from(bar);// ["a", "b", "c"]
+		Array.from('foo');// ["f", "o", "o"]
+		//传递的字符串将会被拆分
+		Array.of(7);       // [7]
+		Array.of(1, 2, 3); // [1, 2, 3]
+		Array(7);          // [ , , , , , , ]
+		Array(1, 2, 3);    // [1, 2, 3]
+
+		function foo(){
+		    console.log(Array.isArray(arguments));
+		    //console.log(arguments.pop());
+		    //这样不能调用，会报错。数组与类数组对象
+		    console.log(Array.prototype.pop.call(arguments));
+		}
+		foo(3,2,5);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

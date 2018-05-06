@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//Part1111111 数组原型方法（迭代-非破坏性-检测方法）thisValue可以指定callback中的this
+		// Array.prototype.forEach(callback,thisValue?)	注意并不返回新的数组
+		var arr1= [2,5,8];
+		arr1.forEach(function (a) {
+		    if(a>3){
+		        console.log(a,"大于3");
+		    }else {
+		        console.log(a,"不大于3");
+		    }
+		});
+		console.log(arr1);
+		/*输出
+		2 "不大于3"
+		5 "大于3"
+		8 "大于3"
+		[2, 5, 8]
+		*/
+
+		// Array.prototype.every(callback,thisValue?) 
+		//返回一个布尔类型，若有不满足的将不再进行后续判断直接返回false
+		var arr2= [2,5,8];//[2,4,6]
+		var returnValue = arr2.every(function (a) {
+	//判断数组元素是否都是偶数，若有不满足的将不再进行后续判断
+		  	console.log(a);//不会输出8，因为5不满足不在进行判断
+		    return a%2===0;
+		});
+		console.log(returnValue);
+		
+		// Array.prototype.some(callback,thisValue?)
+		//返回一个布尔类型若有一部分满足的将不再进行后续判断，直接返回true
+		var arr2= [2,5,8];//[2,4,6]
+		var returnValue = arr2.some(function (a) {
+	//判断数组元素是否都是偶数，若有不满足的将不再进行后续判断
+		    console.log(a);
+		    //输出2,满足条件不在进行后续判断
+		    return a%2===0;
+		});
+		console.log(returnValue);
+		//true
+	</script>
+</head>
+<body>
+
+</body>
+</html>
