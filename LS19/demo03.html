@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//完整日期格式实例
+		// YYYY-MM-DD THH:mm:ss.sssZ
+		//T代表时间，Z代表时区
+
+		console.log(new Date("2010-01-01 11:12:23.111"));
+		console.log(new Date("2010-01-01T11:12:23.111Z"));
+		//差一个时区
+
+		var today=new Date();//当前日期是2018/5/7
+		console.log(new Date(today.getTime()+5*24*60*60*1000));
+		//输出Sat May 12 2018 15:06:08 GMT+0800 (中国标准时间)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
