@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//对象的解构与数组有重要的不同
+	//对象的属性没有次序，变量必须与属性同名，才能取到正确的值
+		var { bar2, foo2 } = { foo2: "ccc", bar2: "ddd" };
+		console.log(foo2,bar2);
+		//输出ccc ddd
+
+		var { baz3 } = { foo3: "ccc", bar3: "ddd" };
+		console.log(baz3);
+		//输出undefined
+
+		//左侧为键值对时,注意键值对赋值时的对应关系
+		var { foo4: baz4 } = { foo4: 'aaa', bar4: 'bbb' };
+		console.log(baz4);// "aaa"
+
+		/*
+		let obj1 = { first: 'hello', last: 'world' };
+
+		let { first: f, last: l } = obj1;
+		console.log(f,l);
+		//输出hello world
+
+		let { first, last } = obj1;
+		console.log(first,last);
+		//输出hello world
+		*/
+
+		var obj2 = {
+		    p: [
+		        'Hello',
+		        { y: 'World' }
+		    ]
+		};
+		var { p: [x, { y }] } = obj2;
+		console.log(x); // "Hello"
+		console.log(y); // "World
+		console.log(p);	//报错
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
