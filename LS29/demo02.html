@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//ES6改变了这种行为。如果RegExp构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。
+		// 而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。
+		new RegExp(/abc/ig, 'i').flags// "i"
+
+		//（粘连sticky）修饰符
+		var s = 'aaa_aa_a';
+		var r1 = /a+/g;
+		var r2 = /a+/y;
+		r1.exec(s); // ["aaa"]
+		r2.exec(s); // ["aaa"]
+		r1.exec(s); // ["aa"]
+		r2.exec(s); // null
+		//上面代码有两个正则表达式，一个使用g修饰符，另一个使用y修饰符。
+		// 这两个正则表达式各执行了两次，第一次执行的时候，两者行为相同，剩余字符串都是_aa_a。
+		//由于g修饰没有位置要求，所以第二次执行会返回结果，而y修饰符要求匹配必须从头部开始，所以返回null。
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

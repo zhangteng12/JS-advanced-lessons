@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+	//ES6在Number对象上，新提供了Number.infinite()和Number.isNaN()
+		//Number.isFinite();//用来检查一个数值是否为有限的（finite）。
+		Number.isFinite(15); // true
+		Number.isFinite(0.8); // true
+		Number.isFinite(NaN); // false
+		Number.isFinite(Infinity); // false
+		Number.isFinite(-Infinity); // false
+		Number.isFinite('foo'); // false
+		Number.isFinite('15'); // false
+		Number.isFinite(true); // false
+
+		//Number.isNaN()//用来检查一个值是否为NaN。
+		Number.isNaN(NaN); // true
+		Number.isNaN(15); // false
+		Number.isNaN('15'); // false
+		Number.isNaN(true); // false
+		Number.isNaN(9/NaN); // true
+		Number.isNaN('true'/0); // true
+		Number.isNaN('true'/'true') // true
+
+		//与传统的全局方法isFinite()和isNaN()的区别
+		isFinite(25); // true
+		isFinite("25"); // true
+		//全局的进行了隐式类型转换
+		Number.isFinite(25); // true
+		Number.isFinite("25"); // false
+
+		//Number.isInteger()用来判断一个值是否为整数。
+		Number.isInteger(25); // true
+		Number.isInteger(25.0); // true
+		Number.isInteger(25.1); // false
+		Number.isInteger("15"); // false
+		Number.isInteger(true); // false
+
+		//Math.trunc方法用于去除一个数的小数部分，返回整数部分。
+		Math.trunc(4.1); // 4
+		Math.trunc(4.9); // 4
+		Math.trunc(-4.1); // -4
+		Math.trunc(-4.9); // -4
+		Math.trunc(-0.1234); // -0
+
+		//Math.sign方法用来判断一个数到底是正数、负数、还是零
+		Math.sign(-5); // -1
+		Math.sign(5); // +1
+		Math.sign(0); // +0
+		Math.sign(-0); // -0
+		Math.sign(NaN); // NaN
+		Math.sign('foo'); // NaN
+		Math.sign(); // NaN
+	</script>
+</head>
+<body>
+
+</body>
+</html>

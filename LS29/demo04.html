@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//类数组对象
+		let arrayLike = {
+		    '0': 'a',
+		    '1': 'b',
+		    '2': 'c',
+		    length: 3
+		};
+		console.log(arrayLike[0]);//输出a
+		//像数组一样可以通过数组名[]来输出
+
+		// ES5的写法
+		var arr1 = Array.prototype.slice.call(arrayLike); // ['a', 'b', 'c']
+		// ES6的写法
+		let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
+
+		//关于Array.of静态方法
+		//Array.of方法用于将一组值，转换为数组。
+		Array.of(3, 11, 8); // [3,11,8]
+		Array.of(3); // [3]
+		Array.of(3).length; // 1
+		//这个方法的主要目的，是弥补数组构造函数Array()的不足。因为参数个数的不同，会导致Array()的行为有差异。
+		Array(); // []
+		Array(3); // [, , ,]
+		Array(3, 11, 8); // [3, 11, 8]
+
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
