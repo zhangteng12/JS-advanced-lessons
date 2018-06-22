@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+		//新增数据结构set
+		//set类似于数组，但是成员的值唯一，没有重复的
+		var set = new Set();
+		set.add({});
+		console.log(set.size); // 1
+		set.add({});
+		console.log(set.size); // 2
+
+		s.add(1).add(2).add(2);
+		// 注意2被加入了两次
+		s.size // 2
+		s.has(1); // true
+		s.has(2); // true
+		s.has(3); // false
+		s.delete(2);
+		s.has(2); // false
+		//set解构不会添加重复的值
+
+		//Array.from方法可以将Set结构转为数组。
+		var items = new Set([1, 2, 3, 4, 5]);
+		var array = Array.from(items);
+
+		//...也可以将set转换成数组
+		console.log([...(new Set([1, 2, 3, 4, 5]))]);//[1, 2, 3, 4, 5]
+		//如果不加[]就是散列的元素
+		console.log(...(new Set([1, 2, 3, 4, 5])));//1, 2, 3, 4, 5
+	</script>
+</head>
+<body>
+
+</body>
+</html>

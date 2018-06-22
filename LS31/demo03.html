@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><meta charset="utf-8">
+	<script type="text/javascript">
+	//Symbol作为属性名，该属性不会出现在for...in、for...of循环中
+	//也不会被Object.keys()、Object.getOwnPropertyNames()返回，但它也不是私有属性
+	//使用Object.getOwnPropertySymbols方法，可以获取指定对象的所有Symbol属性名
+
+	//Symbol.for( )接受一个字符串作为参数，搜索有没有以该参数作为名称的Symbol值。如果有，就返回这个Symbol值，否则就新建并返回一个以该字符串为名称的Symbol值 
+	//Symbol.keyFor( )方法返回一个已登记的Symbol类型值的key，字符串类型
+
+
+		//遍历实例一
+		var obj = {};
+		var a = Symbol('a');
+		var b = Symbol('b');
+		obj[a] = 'Hello';
+		obj[b] = 'World';
+		var objectSymbols = Object.getOwnPropertySymbols(obj);
+		console.log(objectSymbols);// [Symbol(a), Symbol(b)]
+
+		//遍历实例二
+		var obj = {};
+		var foo = Symbol("foo");
+		Object.defineProperty(obj, foo, {
+		    value: "foo bar",
+		});
+		for (var i in obj) {
+		    console.log(i); // 无输出
+		}
+		Object.getOwnPropertyNames(obj);// []
+		Object.getOwnPropertySymbols(obj);// [Symbol(foo)]
+
+		var s1 = Symbol.for('foo');
+		var s2 = Symbol.for('foo');
+		console.log(s1 === s2); // true
+
+		console.log(Symbol.for("bar") === Symbol.for("bar"));// true
+		console.log(Symbol("bar") === Symbol("bar"));// false
+		console.log(Symbol.for("bar") === Symbol("bar"));// false
+
+		//Symbol.keyFor方法返回一个已登记的Symbol类型值的key。
+		var s1 = Symbol.for("foo");
+		console.log(Symbol.keyFor(s1)); // "foo"
+		var s2 = Symbol("foo");
+		console.log(Symbol.keyFor(s2)); // undefined
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
